@@ -1,6 +1,18 @@
 import type { LucideIcon } from 'lucide-vue-next';
 import type { Config } from 'ziggy-js';
 
+export interface UserItem {
+    uuid: number;
+    name: string;
+    email: string;
+    avatar?: string;
+    roles: string[];
+    created_at: string;
+    updated_at: string;
+}
+
+export type UserItemType = UserItem;
+
 export interface Auth {
     user: User;
 }

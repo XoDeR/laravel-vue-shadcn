@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         User::factory(50)->create()->each(function ($user) {
             $user->assignRole('user');
             $user->created_at = fake()->dateTimeBetween('-1 year', 'now');
+            $user->updated_at = fake()->dateTimeBetween('-1 month', 'now');
             $user->save();
         });
     }
