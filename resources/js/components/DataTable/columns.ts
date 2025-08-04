@@ -1,8 +1,9 @@
 import type { Task } from '@/lib/ExampleData/schema';
 import type { ColumnDef } from '@tanstack/vue-table';
 
+import { Badge } from '@/components/ui/badge';
+import { Checkbox } from '@/components/ui/checkbox';
 import { labels, priorities, statuses } from '@/lib/ExampleData/data';
-import { BadgeIcon, CheckboxIcon } from '@radix-icons/vue';
 import { h } from 'vue';
 import DataTableColumnHeader from './DataTableColumnHeader.vue';
 import DataTableRowActions from './DataTableRowActions.vue';
@@ -11,14 +12,14 @@ export const columns: ColumnDef<Task>[] = [
     {
         id: 'select',
         header: ({ table }) =>
-            h(CheckboxIcon, {
+            h(Checkbox, {
                 modelValue: table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate'),
                 'onUpdate:modelValue': (value) => table.toggleAllPageRowsSelected(!!value),
                 ariaLabel: 'Select all',
                 class: 'translate-y-0.5',
             }),
         cell: ({ row }) =>
-            h(CheckboxIcon, {
+            h(Checkbox, {
                 modelValue: row.getIsSelected(),
                 'onUpdate:modelValue': (value) => row.toggleSelected(!!value),
                 ariaLabel: 'Select row',
@@ -42,7 +43,7 @@ export const columns: ColumnDef<Task>[] = [
             const label = labels.find((label) => label.value === row.original.label);
 
             return h('div', { class: 'flex space-x-2' }, [
-                label ? h(BadgeIcon, { variant: 'outline' }, () => label.label) : null,
+                label ? h(Badge, { variant: 'outline' }, () => label.label) : null,
                 h('span', { class: 'max-w-[500px] truncate font-medium' }, row.getValue('title')),
             ]);
         },

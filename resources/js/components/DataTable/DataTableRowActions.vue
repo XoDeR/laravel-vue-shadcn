@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { Row } from '@tanstack/vue-table'
-import type { Task } from '../data/schema'
+import type { Task } from '@/lib/ExampleData/schema'
 import { computed } from 'vue'
-import DotsHorizontalIcon from '~icons/radix-icons/dots-horizontal'
-import { Button } from '@/registry/new-york/ui/button'
+import { DotsHorizontalIcon } from '@radix-icons/vue'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,10 +16,10 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from '@/registry/new-york/ui/dropdown-menu'
+} from '@/components/ui/dropdown-menu'
 
-import { labels } from '../data/data'
-import { taskSchema } from '../data/schema'
+import { labels } from '@/lib/ExampleData/data'
+import { taskSchema } from '@/lib/ExampleData/schema'
 
 interface DataTableRowActionsProps {
   row: Row<Task>

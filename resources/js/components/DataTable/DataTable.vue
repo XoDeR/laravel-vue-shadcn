@@ -5,7 +5,7 @@ import type {
   SortingState,
   VisibilityState,
 } from '@tanstack/vue-table'
-import type { Task } from '../data/schema'
+import type { Task } from '@/lib/ExampleData/schema'
 
 import {
   FlexRender,
@@ -26,7 +26,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/registry/new-york/ui/table'
+} from '@/components/ui/table'
 import DataTablePagination from './DataTablePagination.vue'
 import DataTableToolbar from './DataTableToolbar.vue'
 

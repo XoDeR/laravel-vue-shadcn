@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { Table } from '@tanstack/vue-table'
-import type { Task } from '../data/schema'
+import type { Task } from '@/lib/ExampleData/schema'
 import { computed } from 'vue'
-import MixerHorizontalIcon from '~icons/radix-icons/mixer-horizontal'
+import { MixerHorizontalIcon } from '@radix-icons/vue'
 
-import { Button } from '@/registry/new-york/ui/button'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -12,7 +12,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/registry/new-york/ui/dropdown-menu'
+} from '@/components/ui/dropdown-menu'
 
 interface DataTableViewOptionsProps {
   table: Table<Task>
