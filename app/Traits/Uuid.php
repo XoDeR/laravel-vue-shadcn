@@ -17,4 +17,15 @@ trait Uuid
     {
         return 'uuid';
     }
+
+    /**
+     * Get the columns that should receive a unique identifier
+     * This should be present (overriden) in the trait to use both id and uuid in the model
+     *
+     * @return array<int, string>
+     */
+    public function uniqueIds(): array
+    {
+        return ['uuid'];
+    }
 }
